@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0,viewport-fit=cover"/>
+    <title>Pac-Man · Joxia</title>
+    <link rel="shortcut icon" href="favicon.png">
+    <style>
+        *{ margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+        html,body{ height:100%; }
+        body{
+            background:radial-gradient(120% 90% at 50% 0%, #10132a 0%, #0a0b1a 70%);
+            color:#fff; font-family:'Segoe UI',system-ui,sans-serif; overflow:hidden;
+            display:flex; flex-direction:column; align-items:center; justify-content:center;
+            touch-action:none; user-select:none; -webkit-user-select:none;
+            padding:env(safe-area-inset-top) 8px env(safe-area-inset-bottom);
+        }
+        #joxia-back{ position:fixed; top:10px; left:10px; z-index:9999; display:flex; align-items:center; gap:8px;
+            background:rgba(255,255,255,.08); color:#fff; border:1px solid rgba(255,255,255,.25); border-radius:11px;
+            padding:8px 12px; font-weight:800; font-size:13px; text-decoration:none; backdrop-filter:blur(6px); }
+        #joxia-back span{ background:#ffd54a; color:#1a1a2e; border-radius:6px; padding:2px 8px; font-size:12px;
+            max-width:90px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+        #joxia-back:active{ transform:scale(.96); }
+        #canvas{ display:block; background:#000; border-radius:12px;
+            width:min(96vw, calc(96dvh * 1.5)); height:auto; box-shadow:0 12px 40px rgba(0,0,0,.5); }
+        .hint{ margin-top:12px; color:#8a90b0; font-weight:700; font-size:13px; text-align:center; }
+        .credit{ margin-top:6px; color:#565c7d; font-size:11px; }
+        .credit a{ color:#7a80a8; }
+    </style>
+</head>
+<body>
+    <a id="joxia-back" href="https://joxiagame.github.io/Joxia-Games/">🏠 Quitter <span id="joxia-player"></span></a>
+
+    <canvas id="canvas" width="960" height="640">Canvas non supporté</canvas>
+    <div class="hint">Balaie pour bouger • touche pour démarrer / pause</div>
+    <div class="credit">Pac-Man par <a href="https://github.com/mumuy/pacman" target="_blank" rel="noopener">Haole Zheng</a> (MIT) · intégré à Joxia</div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-database-compat.js"></script>
+    <script src="./static/script/game.js"></script>
+    <script src="./static/script/index.js"></script>
+    <script src="./static/script/joxia.js"></script>
+</body>
+</html>
